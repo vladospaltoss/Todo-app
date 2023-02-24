@@ -8,28 +8,20 @@
 <body>
 	<div class="container">
 		<h1>Todo List</h1>
-		<form>
-			<input type="text" id="new-task" placeholder="Add a new task">
+		<form action="/addTodoItem/" method='POST'> {% csrf_token %}
+			<input type="text" id="new-task" placeholder="Add a new task" name="content">
 			<button type="submit">Add Task</button>
 		</form>
 		<ul id="todo-list">
+			{% for i in all_items %}
 			<li>
 				<input type="checkbox">
-				<label>Example task 1</label>
+				<label>{{ i.content }}</label>
 				<button class="delete-button">Delete</button>
 			</li>
-			<li>
-				<input type="checkbox">
-				<label>Example task 2</label>
-				<button class="delete-button">Delete</button>
-			</li>
-			<li>
-				<input type="checkbox">
-				<label>Example task 3</label>
-				<button class="delete-button">Delete</button>
-			</li>
+			{% endfor %}
 		</ul>
 	</div>
-	<script type="text/javascript" src="{% static 'script.js' %}"></script>
+	{% comment %} <script type="text/javascript" src="{% static 'script.js' %}"></script> {% endcomment %}
 </body>
 </html>
