@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo Application</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+	<div class="container">
+		<h1>Todo List</h1>
+		<form>
+			<input type="text" id="new-task" placeholder="Add a new task">
+			<button type="submit">Add Task</button>
+		</form>
+		<ul id="todo-list">
+			<li>
+				<input type="checkbox">
+				<label>Example task 1</label>
+				<button class="delete-button">Delete</button>
+			</li>
+			<li>
+				<input type="checkbox">
+				<label>Example task 2</label>
+				<button class="delete-button">Delete</button>
+			</li>
+			<li>
+				<input type="checkbox">
+				<label>Example task 3</label>
+				<button class="delete-button">Delete</button>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="{% static 'script.js' %}"></script>
+</body>
+</html>
