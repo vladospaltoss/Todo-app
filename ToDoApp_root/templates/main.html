@@ -17,11 +17,12 @@
 			<li>
 				<input type="checkbox">
 				<label>{{ i.content }}</label>
-				<button class="delete-button">Delete</button>
+				<form action="/deleteTodoItem/{{i.id}}/" method = "post">{% csrf_token %}
+					<input type="submit" value="Delete" class="delete-button">
+				</form>
 			</li>
 			{% endfor %}
 		</ul>
 	</div>
-	{% comment %} <script type="text/javascript" src="{% static 'script.js' %}"></script> {% endcomment %}
 </body>
 </html>
